@@ -4,7 +4,7 @@
 * GraphQL Resolvers 
 **/
 
-const todos = ["zong","warid","telenor"]
+var todos = ["zong","warid","telenor"]
 
 export const resolvers={
     Query:{
@@ -47,7 +47,9 @@ export const resolvers={
         },
 
         deleteTodos: (root, { index}) => {
-           return todos.filter((item,indexNo) => indexNo !== index)
+            console.log("delete",index)
+           todos = todos.filter((item,indexNo) => indexNo !== index)
+           return todos
         }
 
  
